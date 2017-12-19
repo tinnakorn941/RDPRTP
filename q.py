@@ -16,13 +16,13 @@ from selenium import webdriver
 
 
 cl = LINETCR.LINE()
-#cl.login(cert="a28210abfbd9a46ea4c9165f3ca9c6cbd811907322106fb637395f999109a18d")#nietha 
-cl.login(token="EnRcXkWoRy830CGz40K7.nw9iV0HxTqaXpwe+et0DzW.TopXsWQUCkS/qF7hQfkZqTduYxJfVr2fylIpJPKBrNk=")
+cl.login(qr=True)#nietha 
+#cl.login(token="EnRcXkWoRy830CGz40K7.nw9iV0HxTqaXpwe+et0DzW.TopXsWQUCkS/qF7hQfkZqTduYxJfVr2fylIpJPKBrNk=")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-#ki.login(cert="380b6e0ce26ec748d7cafbd83676e5f8416f6c495446c6cd065c577557205a86")#yuriko 
-ki.login(token="EnBG6GdFhB9CkKkYFfMe.3pYwECMJ9ATI4rShZeG0VG.ka3fxvVv0ntkuxnyOg+pvG2737fnkfRO5dxp27lKbxk=")
+ki.login(qr=True)#yuriko 
+#ki.login(token="EnBG6GdFhB9CkKkYFfMe.3pYwECMJ9ATI4rShZeG0VG.ka3fxvVv0ntkuxnyOg+pvG2737fnkfRO5dxp27lKbxk=")
 ki.loginResult()
 
 ks = kc = kk = ki
