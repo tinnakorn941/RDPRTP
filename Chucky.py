@@ -259,7 +259,7 @@ Dmid = kr.getProfile().mid
 Emid = km.getProfile().mid
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid]
 Creator="u08810e0d9afa004ff8d0de22fdb49b69"
-admin=["u08810e0d9afa004ff8d0de22fdb49b69","u356f48bf4857b500313d613f113d1d67"]
+admin=["u08810e0d9afa004ff8d0de22fdb49b69","u356f48bf4857b500313d613f113d1d67","ud4f5733dc2441623090195b3a81fcd26"]
 
 contact = cl.getProfile()
 backup1 = cl.getProfile()
@@ -313,7 +313,7 @@ wait = {
     'timeline':True,
     "Timeline":True,
     'autoAdd':True,
-    "comment1":"Ready:\n-VIP iOS\n-Selfbot\n-Protect Bot\n-Trial Included\n-Fitur bisa dipilih\n-Bot online ￼ \nHarga?Just PM",
+    "comment1":"Ready:\n-VIP iOS\n-Selfbot\n-Protect Bot\n-Trial Included\n-Fitur bisa dipilih\n-Bot online ￼ \nHarga?Just PM line.me/ti/p/~nughiroyale",
     "comment2":"Wkwkwk",
     "comment3":"Maaf numpang promo",
     "comment4":"Cmiiw ^_^",
@@ -2329,8 +2329,78 @@ def bot(op):
                 for i in gid:
                     kc.rejectGroupInvitation(i)
                 kc.sendText(msg.to,"All invitations have been refused")
+
+    #--------------- SC Add Admin ---------
+            elif "Admin add @" in msg.text:
+              if msg.from_ in Creator:
+                print "[Command]Staff add executing"
+                _name = msg.text.replace("Admin add @","")
+                _nametarget = _name.rstrip('  ')
+                gs = cl.getGroup(msg.to)
+                gs = ki.getGroup(msg.to)
+                gs = kk.getGroup(msg.to)
+                gs = kc.getGroup(msg.to)
+                gs = ks.getGroup(msg.to)
+                targets = []
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        targets.append(g.mid)
+                if targets == []:
+                   random.choice(KAC).sendText(msg.to,"Contact not found")
+                else:
+                   for target in targets:
+                        try:
+                            admin.append(target)
+                            cl.sendText(msg.to,"Admin Ditambahkan")
+                        except:
+                            pass
+                print "[Command]Staff add executed"
+              else:
+                cl.sendText(msg.to,"Perintah Ditolak.")
+                cl.sendText(msg.to,"Hanya Owner Yang bisa Gunain Perintah ini.")
+                
+            elif "Admin remove @" in msg.text:
+              if msg.from_ in Creator:
+                print "[Command]Staff remove executing"
+                _name = msg.text.replace("Admin remove @","")
+                _nametarget = _name.rstrip('  ')
+                gs = cl.getGroup(msg.to)
+                gs = ki.getGroup(msg.to)
+                gs = kk.getGroup(msg.to)
+                gs = kc.getGroup(msg.to)
+                gs = ks.getGroup(msg.to)
+                targets = []
+                for g in gs.members:
+                    if _nametarget == g.displayName:
+                        targets.append(g.mid)
+                if targets == []:
+                   random.choice(KAC).sendText(msg.to,"Contact not found")
+                else:
+                   for target in targets:
+                        try:
+                            admin.remove(target)
+                            cl.sendText(msg.to,"Admin Dihapus")
+                        except:
+                            pass
+                print "[Command]Staff remove executed"
+              else:
+                cl.sendText(msg.to,"Perintah Ditolak.")
+                cl.sendText(msg.to,"Hanya Owner Yang bisa Gunain Perintah ini.")
+                
+            elif msg.text in ["Adminlist","adminlist"]:
+              if admin == []:
+                  cl.sendText(msg.to,"The stafflist is empty")
+              else:
+                  cl.sendText(msg.to,"Loading...")
+                  mc = "||Admin ROYALE TEAM PROTECT||\n=====================\n"
+                  for mi_d in admin:
+                      mc += "••>" +cl.getContact(mi_d).displayName + "\n"
+                  cl.sendText(msg.to,mc)
+                  print "[Command]Stafflist executed"
+    #--------------------------------------
 #--------------------------------------------------------
             elif msg.text in ["Gurl"]:
+              if msg.from_ in Creator:
                 if msg.toType == 2:
                     x = cl.getGroup(msg.to)
                     if x.preventJoinByTicket == True:
@@ -2689,7 +2759,7 @@ def bot(op):
 		else:
 		    cl.sendText(msg.to, "No Access")
 		    
-            elif msg.text in ["Turn off"]:                
+        elif msg.text in ["Turn off"]:                
 	        if msg.from_ in Creator:                
                  try:
                      import sys
