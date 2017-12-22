@@ -2758,15 +2758,6 @@ def bot(op):
 		    print "@Restart"
 		else:
 		    cl.sendText(msg.to, "No Access")
-		    
-            elif msg.text in ["Turn off"]:                
-	        if msg.from_ in Creator:                
-                 try:
-                     import sys
-                     sys.exit()
-                 except:
-                     pass 		    
-
 
 #-------------------CRASH--------------------------------
             elif 'Crash' in msg.text:
