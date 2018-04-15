@@ -145,8 +145,8 @@ kembali.statusMessage = contact.statusMessage
 kembali.pictureStatus = contact.pictureStatus
 
 Bots=[mid]
-Creator="u08810e0d9afa004ff8d0de22fdb49b69"
-admin=["u08810e0d9afa004ff8d0de22fdb49b69","u356f48bf4857b500313d613f113d1d67"]
+Creator="u15d6baf1b56b371f98fe441f0abf3ec5"
+admin=["u15d6baf1b56b371f98fe441f0abf3ec5"]
 
 wait = {
     "blacklist":{},    
